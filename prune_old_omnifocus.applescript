@@ -6,7 +6,8 @@
 -- 	To get project id: Right click the project -> Copy as Link. You'll get:
 -- 		omnifocus:///task/foo
 -- 	foo is project id
-
+--
+-- 	CAUTION: This script deletes tasks. Be careful
 
 tell application "OmniFocus"
 	-- Set project id
@@ -18,7 +19,6 @@ tell application "OmniFocus"
 		set theTasks to every task of project id projectID
 	end tell
 	repeat with theTask in theTasks
-		--if creation date of theTask is less than killDate then delete theTask
 		if creation date of theTask is less than killDate then delete theTask
 	end repeat
 end tell
